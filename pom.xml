@@ -32,14 +32,13 @@
     <version>3.55</version>
     <relativePath />
   </parent>
-
   <artifactId>ssh-credentials</artifactId>
-  <version>1.17.4</version>
+  <version>${revision}${changelist}</version>
   <packaging>hpi</packaging>
 
   <name>SSH Credentials Plugin</name>
   <description>Allows storage of SSH credentials in Jenkins</description>
-  <url>https://github.com/jenkinsci/ssh-credentials-plugin/tree/master/doc</url>
+  <url>https://github.com/jenkinsci/ssh-credentials-plugin/blob/master/doc/README.md</url>
   <licenses>
     <license>
       <name>MIT License</name>
@@ -66,14 +65,16 @@
     <connection>scm:git:git://github.com/jenkinsci/ssh-credentials-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/ssh-credentials-plugin.git</developerConnection>
     <url>http://github.com/jenkinsci/ssh-credentials-plugin</url>
-    <tag>ssh-credentials-1.17.4</tag>
+    <tag>${scmTag}</tag>
   </scm>
 
   <properties>
-    <revision>1.18</revision>
+    <revision>1.18.2</revision>
     <changelist>-SNAPSHOT</changelist>
-    <jenkins.version>2.138.4</jenkins.version>
+    <jenkins.version>2.190.1</jenkins.version>
     <java.level>8</java.level>
+    <slf4jVersion>1.7.26</slf4jVersion> <!-- TODO pending https://github.com/jenkinsci/plugin-pom/pull/229 -->
+    <!-- TODO use BOM after https://github.com/jenkinsci/bom/pull/110 -->
     <jcasc.version>1.35</jcasc.version>
   </properties>
 
@@ -99,10 +100,9 @@
       <optional>true</optional>
     </dependency>
     <dependency>
-      <!-- TODO: after upgrading jenkins.version >= 2.171, migrate dependency -->
-      <groupId>io.jenkins.temp.jelly</groupId>
-      <artifactId>multiline-secrets-ui</artifactId>
-      <version>1.0</version>
+      <groupId>org.jenkins-ci.plugins</groupId>
+      <artifactId>trilead-api</artifactId>
+      <version>1.0.5</version>
     </dependency>
     <!-- plugin dependencies -->
     <dependency>
