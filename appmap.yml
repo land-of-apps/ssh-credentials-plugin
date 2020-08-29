@@ -1,0 +1,5 @@
+name: jenkins-plugin-ssh-credentials
+packages:
+- path: jenkins
+- path: hudson
+- path: com.cloudbees.jenkins.plugins.sshcredentials
