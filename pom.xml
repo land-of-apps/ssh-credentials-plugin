@@ -32,7 +32,6 @@
     <version>3.55</version>
     <relativePath />
   </parent>
-
   <artifactId>ssh-credentials</artifactId>
   <version>${revision}${changelist}</version>
   <packaging>hpi</packaging>
